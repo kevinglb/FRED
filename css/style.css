@@ -1,0 +1,26 @@
+html, body {
+  background-color: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  .wrap .topArea {
+    position: absolute;
+    bottom: 50%; }
+  .wrap .botArea {
+    position: absolute;
+    top: 50%; }
+
+/*# sourceMappingURL=style.css.map */
