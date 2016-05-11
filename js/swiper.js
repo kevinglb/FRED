@@ -100,7 +100,7 @@
             roundLengths: false,
             // Touches
             touchRatio: 1,
-            touchAngle: 75,
+            touchAngle: 80,
             simulateTouch: true,
             shortSwipes: true,
             longSwipes: true,
