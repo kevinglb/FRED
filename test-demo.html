@@ -8,9 +8,8 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/image.css">
     <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-
-   
     <script type="text/javascript">
       (function(doc, win) {
         var docEl = doc.documentElement,
@@ -35,19 +34,31 @@
         <div class="swiper-container shackle-container1 ">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="blanc"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="rose"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="or"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="agrent"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="jaune"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="orrose"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="turquoise"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="grisvert"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="vert"></div>
                 </div>
             </div>
         </div>
@@ -57,20 +68,12 @@
         <div class="swiper-container cable-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img  class="cableImg" src="img/cable-god.png"/>
+                    <div class="cableImg" data-cable="gold"></div>
                 </div>
                 <div class="swiper-slide">
-                    <img  class="cableImg" src="img/cable-god.png"/>
+                    <div class="cableImg" data-cable="silver"></div>
                 </div>
-                <div class="swiper-slide">
-                    <img  class="cableImg" src="img/cable-god.png"/>
-                </div>
-                <div class="swiper-slide">
-                    <img  class="cableImg" src="img/cable-god.png"/>
-                </div>
-                <div class="swiper-slide">
-                    <img  class="cableImg" src="img/cable-god.png"/>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -79,20 +82,32 @@
         <div class="swiper-container shackle-container2 rotated">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                      <div class="shackleImg"></div>
+                      <div class="shackleImg" data-shackle="blanc"></div>
                 </div>
                 <div class="swiper-slide">
-                      <div class="shackleImg"></div>
+                      <div class="shackleImg" data-shackle="rose"></div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="shackleImg"></div>
+                    <div class="shackleImg" data-shackle="or"></div>
                 </div>
                   
                 <div class="swiper-slide">
-                      <div class="shackleImg"></div>
+                      <div class="shackleImg" data-shackle="agrent"></div>
                 </div>
                 <div class="swiper-slide">
-                      <div class="shackleImg"></div>
+                      <div class="shackleImg" data-shackle="jaune"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="orrose"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="turquoise"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="grisvert"></div>
+                </div>
+                <div class="swiper-slide">
+                      <div class="shackleImg" data-shackle="vert"></div>
                 </div>
             </div>
         </div>
@@ -121,25 +136,24 @@
         $(".topArea").css({'height':areaHeight,'width':areaWidth,'left':width - areaWidth});
         $(".botArea").css({'height':areaHeight,'width':areaWidth});
         $(".midArea").css({'height':midHeight, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
-         $(".midBg").css({'height':midHeight+1, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
+        $(".midBg").css({'height':midHeight+1, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
       
         //initial three swipers and sync the control of two shackleSwiper
         
-        var   shackleSwiper1 = new Swiper('.shackle-container1'),
-            shackleSwiper2 = new Swiper('.shackle-container2'),
-             cableSwiper = new Swiper('.cable-container');
+        var shackleSwiper1 = new Swiper('.shackle-container1'),
+            shackleSwiper2 = new Swiper('.shackle-container2',{onSlideChangeStart: changeBG}),
+            cableSwiper = new Swiper('.cable-container');
         shackleSwiper1.params.control =shackleSwiper2;
-         shackleSwiper2.params.control =shackleSwiper1;
+        shackleSwiper2.params.control =shackleSwiper1;
     });
     </script>
     <script type="text/javascript">
-   function changeBG(){ var topBg = $(".fullBg .top"),
-        botBg = $(".fullBg .bot");
-    topBg.removeClass("top");
-    botBg.removeClass("bot").addClass("top");
-    botBg.css({'left':0,"top":0});
-    topBg.addClass("bot");
-}
+        function changeBG(){
+            var topBg = $(".fullBg.top"),
+                botBg = $(".fullBg.bot");
+            topBg.fadeOut(200).removeClass("top").addClass("bot");
+            botBg.fadeIn(200).removeClass("bot").addClass("top");
+        }
     </script>
 </body>
 </html>

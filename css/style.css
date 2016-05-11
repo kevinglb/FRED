@@ -1,151 +1,144 @@
 /* demo style*/
  html,body {
     width: 100%;
-        height: 100%;
-        box-sizing：border-box;
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-
-        overflow-x:hidden;
-        overflow-y:hidden;  
-
-    }
-    body{
-      position: relative;
-    }
-    .swiper-container {
-        width: 100%;
-        margin: 0px auto;
-        text-align: center;
-    }
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-    
-    .wrap{
-      position: relative;
-      height: 100%;
-      width: 100%;
-    }
-    .fullBg{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      transition:all 300ms linear;
-    }
-    .fullBg1{
-      background: transparent url("../img/bg/bg-blanc.jpg") no-repeat;
-      background-size: cover; 
-    }
-    .fullBg2{
-      background: transparent url("../img/bg/bg-agrent.jpg") no-repeat;
-      background-size: cover;
-    }
-    .fullBg.bot{
-      z-index: 1;
-      left: 100%;
-      top: 100%;
-    }
-    .fullBg.top{
-      z-index: 2;
-    }
-    .topArea, .midArea, .midBg, .botArea{
-        position: absolute;
-        z-index: 3;
-    }
-    .topArea{
-      bottom: 50%;
-      background: transparent;
-    }
-    .botArea{
-      top: 50%;
-      background: transparent;
-    }
-    .topArea.rotated{
-        transform: rotate(37deg);
-        -webkit-transform: rotate(37deg);
-        transform-origin: bottom right;
-    }
-    .botArea.rotated{
-        transform: rotate(37deg);
-        -webkit-transform: rotate(37deg);
-        transform-origin: top left;
-    }
-    .midArea.rotated{
-         transform: rotate(37deg);
-        -webkit-transform: rotate(37deg);
-        transform-origin: center center;
-    }
-    .midBg{
-      background: transparent url("../img/bg/bg-mid.jpg") no-repeat;
-      background-size: cover; 
-    }
-    .midBg.rotated{
-       transform: rotate(37deg);
-        -webkit-transform: rotate(37deg);
-        transform-origin: center center;
-    }
-    .topArea .swiper-container, .botArea .swiper-container, .midArea .swiper-container{
-        height: 100%;
-        overflow: visible;
-        z-index: 5;
-    }
-    .midArea .swiper-container{
-        width:75%;
-        
-    }
-    .topArea .swiper-container .swiper-slide, .botArea .swiper-container .swiper-slide, .midArea .swiper-slide{
-        background: transparent;
-        color: #fff;
-        
-    }
-    .topArea .shackleImg{
-        position: absolute;
-        transform:rotate(4deg);
-        width: 0.9rem;
-        height: 6.4rem;
-        background: transparent url("../img/shackle/shackle-blanc.png") no-repeat;
-        background-size: cover;
-        background-position: center bottom;
-        bottom: -0.8rem;
-        left: 6.6rem;
-    }
-    .botArea .shackleImg{
-         position: absolute;
-        transform:rotate(4deg);
-        width: 0.9rem;
-        height: 6.4rem;
-        background: transparent url("../img/shackle/shackle-blanc.png") no-repeat;
-        background-size: cover;
-        
-        background-position: center top;
-        top:-0.8rem;
-        left: 2.3rem;
-    }
-    .midArea .cableImg{
-        transform:rotate(4deg);
-        max-width: 2rem;
-        display: block;
-    
-    }
+    height: 100%;
+    box-sizing：border-box;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x:hidden;
+    overflow-y:hidden;  
+}
+body{
+    position: relative;
+}
+*,*:before,*:after{
+    border-sizing: border-box;
+}
+img{
+    display: block;
+}
+.swiper-container {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+/* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;    
+}
+.wrap{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.fullBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition:all 300ms linear;
+}
+.fullBg1{
+    background: transparent url('../img/bg/bg-blanc.jpg') no-repeat;
+    background-size: cover; 
+}
+.fullBg2{
+    background: transparent url('../img/bg/bg-agrent.jpg') no-repeat;
+    background-size: cover;
+}
+.fullBg.bot{
+    z-index: 1;
+}
+.fullBg.top{
+    z-index: 2;
+}
+.topArea, .midBg, .botArea{
+    position: absolute;
+    z-index: 3;
+}
+.midArea{
+    position: absolute;
+    z-index: 4;
+}
+.midBg{
+    background: transparent url('../img/bg/bg-mid.jpg') no-repeat;
+    background-size: cover; 
+}
+.topArea{
+    bottom: 50%;
+    background: transparent;
+}
+.botArea{
+    top: 50%;
+    background: transparent;
+}
+.topArea.rotated, .botArea.rotated, .midArea.rotated, .midBg.rotated{
+    transform: rotate(37deg);
+}
+.topArea.rotated{
+    transform-origin: bottom right;
+}
+.botArea.rotated{  
+    transform-origin: top left;
+}
+.midArea.rotated{
+    transform-origin: center center;
+}
+.midBg.rotated{
+    transform-origin: center center;
+}
+.topArea .swiper-container, .botArea .swiper-container, .midArea .swiper-container{
+    height: 100%;
+    overflow: visible;
+    z-index: 5;
+}
+.midArea .swiper-container{
+    width:75%;    
+}
+.topArea .swiper-container .swiper-slide, .botArea .swiper-container .swiper-slide, .midArea .swiper-slide{
+    background: transparent;
+}
+.shackleImg{
+    position: absolute;
+    transform:rotate(4deg);
+    width: 0.9rem;
+    height: 6.4rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.topArea .shackleImg{
+    background-position: center bottom;
+    bottom: -0.8rem;
+    left: 6.6rem;
+}
+.botArea .shackleImg{
+    background-position: center top;
+    top:-0.8rem;
+    left: 2.3rem;
+}
+.midArea .cableImg{
+    transform:rotate(4deg);
+    width: 1.9rem;
+    height: 3.45rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

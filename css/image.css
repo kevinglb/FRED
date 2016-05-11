@@ -1,0 +1,34 @@
+div[data-cable='gold']{
+    background-image: url('../img/cable/cable-gold.png');
+
+}
+div[data-cable='silver']{
+    background-image: url('../img/cable/cable-silver.png');
+}
+div[data-shackle='blanc']{
+    background-image: url('../img/shackle/shackle-blanc.png');
+}
+div[data-shackle='rose']{
+    background-image: url('../img/shackle/shackle-rose.png');
+}
+div[data-shackle='or']{
+    background-image: url('../img/shackle/shackle-or.png');
+}
+div[data-shackle='agrent']{
+    background-image: url('../img/shackle/shackle-agrent.png');
+}
+div[data-shackle='jaune']{
+    background-image: url('../img/shackle/shackle-jaune.png');
+}
+div[data-shackle='orrose']{
+    background-image: url('../img/shackle/shackle-orrose.png');
+}
+div[data-shackle='turquoise']{
+    background-image: url('../img/shackle/shackle-turquoise.png');
+}
+div[data-shackle='grisvert']{
+    background-image: url('../img/shackle/shackle-grisvert.png');
+}
+div[data-shackle='vert']{
+    background-image: url('../img/shackle/shackle-vert.png');
+}
