@@ -100,7 +100,7 @@
             roundLengths: false,
             // Touches
             touchRatio: 1,
-            touchAngle: 45,
+            touchAngle: 75,
             simulateTouch: true,
             shortSwipes: true,
             longSwipes: true,
@@ -1459,6 +1459,7 @@
         
             if (typeof isScrolling === 'undefined') {
                 var touchAngle = Math.atan2(Math.abs(s.touches.currentY - s.touches.startY), Math.abs(s.touches.currentX - s.touches.startX)) * 180 / Math.PI;
+                console.log(touchAngle);
                 isScrolling = s.isHorizontal() ? touchAngle > s.params.touchAngle : (90 - touchAngle > s.params.touchAngle);
             }
             if (isScrolling) {
@@ -1513,7 +1514,7 @@
             isMoved = true;
         
             var diff = s.touches.diff = s.isHorizontal() ? s.touches.currentX - s.touches.startX : s.touches.currentY - s.touches.startY;
-        
+            
             diff = diff * s.params.touchRatio;
             if (s.rtl) diff = -diff;
         
