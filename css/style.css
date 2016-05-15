@@ -61,10 +61,10 @@ img{
     background: transparent url('../img/bg/bg-blanc.jpg') no-repeat;
     background-size: cover; 
 }
-.fullBg2{
+/*.fullBg2{
     background: transparent url('../img/bg/bg-agrent.jpg') no-repeat;
     background-size: cover;
-}
+}*/
 .fullBg.bot{
     z-index: 1;
 }
