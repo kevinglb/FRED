@@ -18,7 +18,7 @@ $(function(){
         touchAngle:80,
         resistance:false,
         resistanceRatio:0.9,
-        onSlideChangeEnd: function(swiper){del(context)},
+        onSlideChangeStart: function(swiper){del(context)},
         watchSlidesProgress : true
     }),
     shackleSwiper2 = new Swiper('.shackle-container2',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9}),
@@ -43,12 +43,15 @@ $(function(){
         context.drawImage(canvasBg,0,0,canvas.width,canvas.height);//在canvas上画背景
         // }
     }
+        var aa=0;
     function del(context){//
+        aa++;
+        console.log(aa);
         prevOrNext();
         var a=0;
         var b=setInterval(function(){
             context.save();//保存状态
-            a+=10;//擦除速度
+            a+=15;//擦除速度
             context.rotate(45*Math.PI/180);//canvas旋转角度
             context.clearRect(0,-600,a,1500);//擦除方块，需要调整
             context.restore();//回归状态
@@ -57,7 +60,7 @@ $(function(){
                 clearInterval(b);
                 drawBg();
             }
-        },1)
+        },10)
     }
     function prevOrNext(){
         changeNum=shackleSwiper1.progress;
