@@ -49,28 +49,29 @@ img{
     height: 100%;
     width: 100%;
 }
-.fullBg{
+.fullBg,.bgNext,.bgPrev,#canvas{
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    transition:all 300ms linear;
 }
-.fullBg1{
-    background: transparent url('../img/bg/bg-blanc.jpg') no-repeat;
-    background-size: cover; 
+.bgNext{
+    background: url('../img/bg/bg-rose.jpg') no-repeat;
+    /*background-size: cover; */
+    background-size: 100% 100%;
+    z-index: 0;
 }
-/*.fullBg2{
-    background: transparent url('../img/bg/bg-agrent.jpg') no-repeat;
-    background-size: cover;
-}*/
-.fullBg.bot{
+.bgPrev{
+    /*background-size: cover; */
+    background-size: 100% 100%;
     z-index: 1;
+    display: none;
 }
-.fullBg.top{
-    z-index: 2;
+#canvas{
+    z-index: 2
 }
+
 .topArea, .midBg, .botArea{
     position: absolute;
     z-index: 3;
