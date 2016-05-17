@@ -15,13 +15,21 @@ $(function(){
       
     //initial three swipers and sync the control of two shackleSwiper    
     var shackleSwiper1 = new Swiper('.shackle-container1',{shortSwipes : true,
+        onInit: function(swiper){ 
+            // swiperAnimateCache(swiper);
+            // swiperAnimate(swiper); 
+        }, 
+        onSlideChangeStart: function(swiper){del(context)},
+        onSlideChangeEnd: function(swiper){ 
+            // swiperAnimate(swiper);
+        },
         touchAngle:80,
         resistance:false,
         resistanceRatio:0.9,
-        onSlideChangeStart: function(swiper){del(context)},
+        touchRatio : 0.8,
         watchSlidesProgress : true
     }),
-    shackleSwiper2 = new Swiper('.shackle-container2',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9}),
+    shackleSwiper2 = new Swiper('.shackle-container2',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9,touchRatio : 0.8}),
     cableSwiper = new Swiper('.cable-container',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9});
     shackleSwiper1.params.control =shackleSwiper2;
     shackleSwiper2.params.control =shackleSwiper1;
@@ -51,12 +59,12 @@ $(function(){
         var a=0;
         var b=setInterval(function(){
             context.save();//保存状态
-            a+=15;//擦除速度
+            a+=10;//擦除速度
             context.rotate(45*Math.PI/180);//canvas旋转角度
             context.clearRect(0,-600,a,1500);//擦除方块，需要调整
             context.restore();//回归状态
             context.stroke();//执行
-            if(a>=1000){
+            if(a>=800){
                 clearInterval(b);
                 drawBg();
             }
