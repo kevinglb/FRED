@@ -1,8 +1,8 @@
 div[data-cable='gold']{
-    background-image: url('../img/cable/cable-gold.png');
+    background-image: url('../img/cable/gold.png');
 }
 div[data-cable='silver']{
-    background-image: url('../img/cable/cable-silver.png');
+    background-image: url('../img/cable/silver.png');
 }
 div[data-shackle='blanc']{
     background-image: url('../img/shackle/shackle-blanc.png');

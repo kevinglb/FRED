@@ -133,12 +133,12 @@ img{
 }
 .botArea .shackleImg{
     background-position: center top;
-    top:-0.8rem;
-    left: 2.3rem;
+    top:-0.7rem;
+    left: 2.32rem;
 }
 .midArea .cableImg{
     transform:rotate(4deg);
-    width: 1.9rem;
+    width: 2rem;
     height: 3.45rem;
     background-size: cover;
     background-repeat: no-repeat;
