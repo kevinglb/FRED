@@ -16,6 +16,8 @@ body{
     position: relative;
 }
 *,*:before,*:after{
+    margin:0;
+    padding:0;
     box-sizing: border-box;
 }
 img{
@@ -44,10 +46,112 @@ img{
     -webkit-align-items: center;
     align-items: center;    
 }
+/*beginFred start*/
+.beginFred{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url('../img/images/beginFred.jpg') no-repeat;
+    background-size:cover;
+}
+.fredTitle{
+    text-align: center;
+    padding-top: 2.64rem;
+    padding-left: 0.2rem;
+    font-size: 0.28rem;
+}
+.beginContainer,.detailsPageContainer,.goToPlayContainer{
+    width: 100%;
+    height: 42%;
+    margin-top: 3.8rem;
+    color:#09183f;
+}
+.beginContainer{
+    display: none;
+}
+.beginPageTitle{
+    text-align: center;
+    font-size: 0.4rem
+}
+.beginPageTitle>span{
+    font-size: 0.54rem;
+}
+.beginPageContent{
+    margin-top: 0.3rem;
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 0.4rem;
+}
+.beginPageStart{
+    width: 0.82rem;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    font-size: 0.4rem;
+    border-bottom: 1px solid #09183f;
+    line-height: 0.39rem;
+    font-weight: 600;
+    display: block;
+}
+.fredRules{
+    width: 0.97rem;
+    margin: 0 auto;
+    margin-top: 0.9rem;
+    font-size: 0.24rem;
+    border-bottom: 1px solid #09183f;
+    line-height: 0.26rem;
+    display: block;
+}
+.detailsPageContainer{
+    display: none
+}
+.detailsPageP1{
+    text-align: Center;
+    padding-top: 0.8rem;
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+}
+.detailsPageP2{
+    text-align: Center;
+    padding-top: 0.6rem;
+    font-size: 0.24rem;
+    line-height: 0.34rem;
+}
+.nextPage{
+   width: 1.2rem;
+   margin: 0 auto;
+   padding-top: 0.6rem; 
+   font-size: 0.4rem;
+   display: block;
+   border-bottom: 1px solid #09183f;
+}
+.goToPlayContainer{
+    
+}
+.goToPlayContent{
+    text-align: center;
+    padding-top: 1.4rem;
+    font-size: 0.28rem;
+    line-height: 0.45rem;
+}
+.goToPlayStart{
+    width: 4rem;
+    line-height: 0.35rem;
+    margin: 0 auto;
+    border-bottom: 1px solid #09183f;
+    padding-top: 1rem; 
+    font-size: 0.4rem;
+    display: block;
+}
+.goToPlayStart>span{
+    font-size: 0.28rem;
+}
+/*beginFred end*/
+/*wrapSwiper start*/
 .wrap{
     position: relative;
     height: 100%;
     width: 100%;
+    display: none;
 }
 .fullBg,.bgNext,.bgPrev,#canvas{
     position: absolute;
@@ -143,3 +247,4 @@ img{
     background-size: cover;
     background-repeat: no-repeat;
 }
+/*warpSwiper end*/
