@@ -53,6 +53,8 @@ img{
     width: 100%;
     background: url('../img/images/beginFred.jpg') no-repeat;
     background-size:cover;
+    z-index: 10;
+    /*display: none;*/
 }
 .fredTitle{
     text-align: center;
@@ -67,7 +69,7 @@ img{
     color:#09183f;
 }
 .beginContainer{
-    display: none;
+    /*display: none;*/
 }
 .beginPageTitle{
     text-align: center;
@@ -125,7 +127,7 @@ img{
    border-bottom: 1px solid #09183f;
 }
 .goToPlayContainer{
-    
+    display: none;
 }
 .goToPlayContent{
     text-align: center;
@@ -146,12 +148,93 @@ img{
     font-size: 0.28rem;
 }
 /*beginFred end*/
+
+/*readyPage start*/
+.readyPage{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background:rgba(0,0,0,0.75);
+    z-index:9;
+}
+.readyPage-container{
+    height:100%;
+}
+.readyPage-container .swiper-slide{
+    background: transparent;
+}
+.readyPageContent{
+    color: #fff;
+    line-height: 0.6rem;
+    position: absolute;
+    width: 2rem;
+    left: 50%;
+    margin-left: -1rem;
+    top: 50%;
+    margin-top: -1.4rem;
+    display: none;
+}
+.readyPageSkip{
+    width: 2rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-radius: 0.2rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -1rem;
+    top: 70%;
+    display: none;
+}
+.readyPageSkip>p{
+    color:#fff;
+    font-size: 0.4rem;
+    position: absolute;
+    width: 0.8rem;
+    height: 0.5rem;
+    left: 50%;
+    margin-left: -0.4rem;
+    top: 50%;
+    margin-top: -0.25rem;
+}
+.swiper-pagination-bullet-active{
+    background-color: #fff;
+    border: 2px solid #FFF;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom:1rem;
+}
+.swiper-pagination-bullet{
+    opacity: 1;
+    width: 0.3rem;
+    height: 0.3rem;
+    border: 2px solid #FFF;
+}
+.swiper-pagination{
+    display: none;
+}
+.tutorial{
+    width:100%;
+    height: 100%;
+    background: url(../img/images/tutorial.jpg) no-repeat;
+    background-size: cover;
+}
+.closeBtn{
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    right: 0.38rem;
+    top: 0.35rem;
+}
+/*readyPage end*/
 /*wrapSwiper start*/
 .wrap{
     position: relative;
     height: 100%;
     width: 100%;
-    display: none;
+    /*display: none;*/
 }
 .fullBg,.bgNext,.bgPrev,#canvas{
     position: absolute;

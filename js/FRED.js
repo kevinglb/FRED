@@ -14,7 +14,8 @@ $(function(){
     $(".midBg").css({'height':midHeight+1, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
       
     //initial three swipers and sync the control of two shackleSwiper    
-    var shackleSwiper1 = new Swiper('.shackle-container1',{shortSwipes : true,
+    var shackleSwiper1 = new Swiper('.shackle-container1',{
+        shortSwipes : true,
         onInit: function(swiper){ 
             // swiperAnimateCache(swiper);
             // swiperAnimate(swiper); 
@@ -31,9 +32,11 @@ $(function(){
     }),
     shackleSwiper2 = new Swiper('.shackle-container2',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9,touchRatio : 0.8}),
     cableSwiper = new Swiper('.cable-container',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9});
+    readyPageSwiper = new Swiper('.readyPage-container',{pagination : '.swiper-pagination',shortSwipes : true, resistance : false,resistanceRatio:0.9});
     shackleSwiper1.params.control =shackleSwiper2;
     shackleSwiper2.params.control =shackleSwiper1;
 
+    //canvas
     var canvas=document.getElementById('canvas');
     var context=canvas.getContext('2d');
     canvas.width=width;
@@ -149,4 +152,27 @@ $(function(){
         body.appendChild(script);
     }
     
+    //beginFred
+    $('#beginPageStart,#goToPlayStart').click(function(){
+        $('.beginFred').fadeOut(600,function(){
+            $('.readyPageContent').fadeIn(1000,function(){
+                $('.readyPageSkip').fadeIn(1000,function(){
+                    $('.swiper-pagination').fadeIn(200)
+                })
+            });
+        });
+    })
+    $('#fredRules').click(function(){
+        $('.beginContainer').fadeOut(600,function(){
+            $('.detailsPageContainer').fadeIn(600);
+        });
+    })
+    $('#nextPage').click(function(){
+        $('.detailsPageContainer').fadeOut(600,function(){
+            $('.goToPlayContainer').fadeIn(600);
+        });
+    })
+    $('#readyPageSkip,#closeBtn').click(function(){
+        $('.readyPage').fadeOut();
+    })
 });
