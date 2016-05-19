@@ -13,6 +13,15 @@ $(function(){
     $(".midArea").css({'height':midHeight, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
     $(".midBg").css({'height':midHeight+1, 'width':midWidth,'left':(width-midWidth)/2,'top':Math.ceil((height-midHeight)/2)});
       
+    //horizonal the a link   
+    $(".completeBtn").css("margin-left", -($(".completeBtn").width()/2));
+    $(".completeBtn").bind('click',function(){
+        $(".completeFred").addClass("active");
+        setTimeout(function(){
+            // $(".wrap").fadeOut();
+        },300);
+        
+    });
     //initial three swipers and sync the control of two shackleSwiper    
     var shackleSwiper1 = new Swiper('.shackle-container1',{
         shortSwipes : true,
