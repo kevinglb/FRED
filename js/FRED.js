@@ -18,9 +18,14 @@ $(function(){
     $(".completeBtn").bind('click',function(){
         $(".completeFred").addClass("active");
         setTimeout(function(){
-            // $(".wrap").fadeOut();
-        },300);
+            $(".wrap").hide();
+        },500);
         
+    });
+
+    //formSubmit button clicked
+    $("#formSubmit").bind('click',function(){
+        $(".shareWrap").addClass("active");
     });
     //initial three swipers and sync the control of two shackleSwiper    
     var shackleSwiper1 = new Swiper('.shackle-container1',{

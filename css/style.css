@@ -12,17 +12,13 @@
     overflow-x:hidden;
     overflow-y:hidden;  
 }
-body{
-    position: relative;
-}
+body{position: relative;}
 *,*:before,*:after{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-img{
-    display: block;
-}
+.clearfix{clear: both;}
 .swiper-container {
     width: 100%;
     margin: 0px auto;
@@ -353,6 +349,7 @@ img{
     overflow: hidden;
     transform: translate3d(0,100%,0);
     transition: 300ms all ease-in-out;
+    background-color: #fff;
 }
 .completeFred.active{
     transform: translate3d(0,0,0);
@@ -383,14 +380,61 @@ img{
     border: 1px solid #919191;
     margin: 0.1rem auto;
 }
-
+#formSubmit{
+    display: block;
+}
 .completeFred .shareWrap{
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
+    background-color: #fff;
     transform: translate3d(100%,0,0);
     transition: 300ms all ease-in-out;
+    text-align: center;
+
 }
 .completeFred .shareWrap.active{
     transform: translate3d(0,0,0);
+}
+
+.completeFred .shareWrap.demo{
+    background-image: url('../img/images/complete_blanc.jpg');
+    background-size: cover;
+}
+.completeFred .shareWrap .combo{
+    display: block;
+    position: relative;
+    height: auto;
+    width: 80%;
+    margin: 2.2rem auto 1.2rem auto;    
+}
+.completeFred .shareWrap h2{
+    margin-bottom: 0.12rem;
+    font-weight: normal;
+}
+.completeFred .shareWrap p:first-of-type{
+    margin: 0.3rem auto;
+}
+.completeFred .shareWrap p:nth-of-type(2){
+    max-width: 65%;
+    margin: 0 auto;
+}
+.completeFred .shareWrap .row{
+    position: relative;
+    width: 90%;
+    margin: 0.3rem auto 0 auto;
+}
+.completeFred .shareWrap .row:before, .completeFred .shareWrap .row:after{
+    clear: both;
+}
+.completeFred .shareWrap .row a{
+    display: block;
+    width: 50%;
+    position: relative;
+    float: left;
+    padding: 0.5rem 0;
+    font-size: 0.36rem;
+    color: #09183f
 }
