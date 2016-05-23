@@ -189,4 +189,5 @@ $(function(){
     $('#readyPageSkip,#closeBtn').click(function(){
         $('.readyPage').fadeOut();
     })
+    $('.manOrWoman input')
 });
