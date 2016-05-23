@@ -166,18 +166,33 @@
         <input type="text" id="sureName" data-name="姓"/>
         <p>名</p>
         <input type="text" id="givenName" data-name="名"/>
-        <p>微信账号</p>
-        <input type="text" id="weChatId" data-name="微信账号"/>
-        <p>我是</p>
-        <label>男性</label><input type="checkbox" id="male" data-name="性别"/>
-        <label>女性</label><input type="checkbox" id="female" data-name="性别"/>
-        <p>电子邮箱</p>
+        <!-- <p>微信账号</p>
+        <input type="text" id="weChatId" data-name="微信账号"/> -->
+        <p class="im">我是</p>
+        <p class="man">男人</p>
+        <div class="checkboxContainer">
+          <label for="checkboxInput">
+            <input type="radio" name="sex" value="male" data-name="male">
+          </label>
+        </div>
+        <p class="woman">女人</p>
+        <div class="checkboxContainer">
+          <label for="checkboxInput">
+            <input type="radio" name="sex" value="female" data-name="female">
+          </label>
+        </div>
+        <p class="Email">电子邮箱</p>
         <input type="text" id="email" data-name="email"/>
         <p>城市</p>
         <input  type="text" id="city" data-name="城市"/>
-
+        <p>出生年月日</p>
+        <input type="date" id="date" value="2016-01-01"data-name="date" >
         <p>我希望收到Fred的newsletter</p>
-        <input type="checkbox" id="newsletter" />
+        <div class="checkboxContainer newsletter">
+          <label for="checkboxInput">
+            <input type="checkbox" name="aa" value="message" id="newsletter" data-name="message">
+          </label>
+        </div>
         <a class="" id="formSubmit">缴交我的表格</a>
       </form>
     </div>
@@ -185,7 +200,7 @@
     <!-- start of shareWrap -->
     <div class="shareWrap demo">
         <img class="combo" src="img/complete-bracelet/blanc-silver.png"/>
-        <h2>一下是您的创作</h2>
+        <h2>以下是您的创作</h2>
         <img class="icon-wave" src="img/images/icon-wave.png"/>
         <p>您的创作已经注册成功</p>
         <p>您将会在最短的时间内获知您的创作是否赢得了Force 10手链</p>
