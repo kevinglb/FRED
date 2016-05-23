@@ -31,7 +31,7 @@ div[data-shackle='grisvert']{
 div[data-shackle='vert']{
     background-image: url('../img/shackle/shackle-vert.png');
 }
-/**/
+/*for canvas background*/
 div[data-bg='blanc']{
     background-image: url('../img/bg/bg-blanc.jpg');
 }
@@ -58,5 +58,11 @@ div[data-bg='grisvert']{
 }
 div[data-bg='vert']{
     background-image: url('../img/bg/bg-vert.jpg');
+}
+div[data-bg='orgris']{
+    background-image: url('../img/bg/bg-orgris.jpg');
+}
+div[data-bg='bleu']{
+    background-image: url('../img/bg/bg-bleu.jpg');
 }
 
