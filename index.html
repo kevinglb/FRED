@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,, minimum-scale=1, maximum-scale=1">
     <title>FRED demo</title>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/swiper.css">
@@ -160,6 +160,7 @@
     <!-- form -->
     <div class="formWrap">
       <h1>表格</h1>
+      <span class="icon-wave"></span>
       <p class="wrapWord">请填写您的联系方式，<br>以便日后获奖我们可以跟您联系。</p>
       <form id="">
         <p>姓</p>
@@ -170,16 +171,14 @@
         <input type="text" id="weChatId" data-name="微信账号"/> -->
         <p class="im">我是</p>
         <p class="man">男人</p>
-        <div class="checkboxContainer">
-          <label for="checkboxInput">
-            <input type="radio" name="sex" value="male" data-name="male">
-          </label>
+        <div class="checkboxContainer manOrWoman">
+          <input type="radio" name="sex" value="male" data-name="male" id="checkboxInputMan">
+          <label for="checkboxInputMan"></label>
         </div>
         <p class="woman">女人</p>
-        <div class="checkboxContainer">
-          <label for="checkboxInput">
-            <input type="radio" name="sex" value="female" data-name="female">
-          </label>
+        <div class="checkboxContainer manOrWoman">
+          <input type="radio" name="sex" value="female" data-name="female" id="checkboxInputWoman">
+          <label for="checkboxInputWoman"></label>
         </div>
         <p class="Email">电子邮箱</p>
         <input type="text" id="email" data-name="email"/>
@@ -189,9 +188,8 @@
         <input type="date" id="date" value="2016-01-01"data-name="date" >
         <p>我希望收到Fred的newsletter</p>
         <div class="checkboxContainer newsletter">
-          <label for="checkboxInput">
-            <input type="checkbox" name="aa" value="message" id="newsletter" data-name="message">
-          </label>
+          <input type="checkbox" name="checkMessage" value="message" id="newsletter" data-name="message">
+          <label for="newsletter"></label>
         </div>
         <a class="" id="formSubmit">缴交我的表格</a>
       </form>
