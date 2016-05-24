@@ -1,7 +1,6 @@
 (function(){
     function FRED(){
         this.init();
-        this.preloadImg(this.initCanvas);
     }
     FRED.prototype={
         init: function(){
@@ -12,17 +11,21 @@
             _this.$midArea = $(".midArea"),
             _this.$botArea = $(".botArea"),
             _this.$midBg = $(".midBg");
+
+            _this.imgArr = [];
             _this.canvas = document.getElementById('canvas');
             _this.context = _this.canvas.getContext('2d');
             _this.shackleSwiper1 = null;
             _this.shackleSwiper2 = null;
             _this.cableSwiper = null;
             _this.shackleSwiperIndex = 0;
-            _this.imgArr = [];
-            _this.selectedCable = null;
-            _this.selectedShackle = null;
+
+            //these will update once slide on cable or shackle
+            _this.selectedCable = "gold";
+            _this.selectedShackle = "blanc";
 
             _this.startFRED();
+            _this.preloadImg(_this.initCanvas);
             _this.initSwiperSize();
         },
 
@@ -81,9 +84,11 @@
             $('#readyPageSkip,#closeBtn').click(function(){
                 $('.readyPage').fadeOut();
             });
+            var readyPageSwiper = new Swiper('.readyPage-container',{pagination : '.swiper-pagination',shortSwipes : true, resistance : false,resistanceRatio:0.9});
         },
 
         initCanvas: function(){
+            //initCanvas used as callback function, the "this" refers to window as default
             var _this = this === window ? window.FRED : this;
             _this.canvas.width = _this.innerWidth;
             _this.canvas.height = _this.innerHeight;
@@ -110,8 +115,8 @@
 
         drawCanvas: function(index){
             var _this = this;
-            var i =_this.shackleSwiperIndex;
-            var canvasBg = _this.imgArr[i].image;//还需要创建初始图片数组
+            var i =_this.shackleSwiperIndex,
+                canvasBg = _this.imgArr[i].image;//还需要创建初始图片数组
             _this.context.drawImage(canvasBg,0,0,_this.canvas.width,_this.canvas.height);//在canvas上画背景
         },
 
@@ -131,25 +136,19 @@
             $(".completeBtn").css("margin-left", -($(".completeBtn").width()/2));
             $(".completeBtn").bind('click',function(){
                 $(".completeFred").addClass("active");
+
                 _this.initForm();
+                _this.generateCombo();
                 setTimeout(function(){
                     $(".wrap").hide();
                 },300);
         
             });
-
             _this.initSwiper();
-
-            // if(typeof callback == "function"){
-            //     callback(); //the default 'this' in callback will refer to window scoop
-            // }else{
-            //     return;
-            // }
         },
 
         initSwiper: function(){
-            //console.log(this == window);
-            // var _this = this === window ? this.FRED : this;
+            
             var _this = this;
             //console.log(_this);
             
@@ -158,17 +157,18 @@
             _this.cableSwiper = new Swiper('.cable-container',{shortSwipes : true, touchAngle:80,resistance : false,resistanceRatio:0.9,onSlideChangeEnd: function(swiper){_this.changeCable()}});
             _this.shackleSwiper1.params.control = _this.shackleSwiper2;
             _this.shackleSwiper2.params.control = _this.shackleSwiper1;
-            // _this.shackleSwiperIndex = _this.shackleSwiper1.progress;
+            //_this.shackleSwiperIndex = _this.shackleSwiper1.progress;
         },
 
         changeCable: function(){
             var _this = this;
             _this.selectedCable = $(".cable-container").find(".swiper-slide-active").find('.cableImg').attr("data-cable");
+            console.log(_this.selectedCable);
         },
 
         changeShackle: function(){
             var _this = this;
-            _this.selectedShackle = $(".shackle-container1").find(".swiper-slide-active").find('.shackleImg').attr("data-cable");
+            _this.selectedShackle = $(".shackle-container1").find(".swiper-slide-active").find('.shackleImg').attr("data-shackle");
         },
 
         detectDir: function(){ //detecet the direction of Swiper animation: prev or ntxt
@@ -191,6 +191,14 @@
             _this.shackleSwiperIndex = index;
         },
 
+        generateCombo: function(){
+            var _this = this;
+            var bracelet = "img/complete-bracelet/"+_this.selectedShackle+"-"+_this.selectedCable+".png";
+            console.log(bracelet);
+            var bg = "url('img/images/complete_"+_this.selectedShackle+".jpg')";
+            $(".shareWrap").css({"background-image": bg});
+            $(".shareWrap .combo").attr("src",bracelet);
+        },
         initForm(){
             var _this = this;
             $("#formSubmit").bind('click',function(){
@@ -200,7 +208,7 @@
 
         completeForm(){
             var _this = this;
-        }
+        },
 
 
     };
