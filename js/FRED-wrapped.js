@@ -24,6 +24,9 @@
             _this.selectedCable = "gold";
             _this.selectedShackle = "blanc";
 
+            _this.imgArr = [];
+            _this.userInfo={};
+
             _this.startFRED();
             _this.preloadImg(_this.initCanvas);
             _this.initSwiperSize();
@@ -84,7 +87,23 @@
             $('#readyPageSkip,#closeBtn').click(function(){
                 $('.readyPage').fadeOut();
             });
+
             var readyPageSwiper = new Swiper('.readyPage-container',{pagination : '.swiper-pagination',shortSwipes : true, resistance : false,resistanceRatio:0.9});
+
+            $('input[type="date"]').change(function(event) {
+                $('.dateContainer .year').text($('#date').val().slice(0,4))
+                $('.dateContainer .month').text($('#date').val().slice(5,7))
+                $('.dateContainer .day').text($('#date').val().slice(8,10))
+            });
+            $('#formSubmit').click(function(){
+                _this.userInfo.name=$('#sureName').val()+$('#givenName').val();
+                _this.userInfo.sex=$('input[type="radio"]:checked').val();
+                _this.userInfo.email=$('#email').val();
+                _this.userInfo.city=$('#city').val();
+                _this.userInfo.birthday=$('#date').val();
+                _this.userInfo.newsletter=$('input[type="checkbox"]:checked').val();
+                console.log(_this.userInfo);
+            })
         },
 
         initCanvas: function(){
