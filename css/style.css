@@ -242,12 +242,10 @@ body{position: relative;}
 }
 .bgNext{
     background: url('../img/bg/bg-rose.jpg') no-repeat;
-    /*background-size: cover; */
     background-size: 100% 100%;
     z-index: 0;
 }
 .bgPrev{
-    /*background-size: cover; */
     background-size: 100% 100%;
     z-index: 1;
     display: none;
@@ -368,9 +366,9 @@ body{position: relative;}
     line-height: 0.35rem;
     font-size: 0.24rem;
     position: absolute;
-    width: 3.6rem;
+    width: 4.3rem;
     left: 50%;
-    margin-left: -1.8rem;
+    margin-left: -2.15rem;
     top: 17%;
 }
 .formWrap form{
@@ -524,14 +522,45 @@ body{position: relative;}
     top: 62%;
 }
 #date{
-    background-color: #fff;
-    width: 2.5rem;
+    /*background-color: #fff;*/
+    width: 2rem;
     height: 0.5rem;
     position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 2;
+}
+.dateContainer{
+    width:2rem;
+    height:.5rem;
+    position:absolute;
     left: 50%;
-    margin-left: -1.25rem;
+    margin-left: -1rem;
     top: 66%;
-    opacity: .5;
+    border:1px solid #B5B8BF;
+}
+.dateContainer .year,.dateContainer .month,.dateContainer .day{
+    height: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+}
+.dateContainer .year{
+    width:.8rem;
+    left: 0;
+    border-right: 1px solid #B5B8BF;
+}
+.dateContainer .month{
+    width:.6rem;
+    left: 40%;
+    border-right:1px solid #B5B8BF;
+}
+.dateContainer .day{
+    width:.6rem;
+    left: 70%;
 }
 .hope{
     position: absolute;

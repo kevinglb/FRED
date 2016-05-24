@@ -19,6 +19,7 @@
             _this.cableSwiper = null;
             _this.shackleSwiperIndex = 0;
             _this.imgArr = [];
+            _this.userInfo={};
             _this.selectedCable = null;
             _this.selectedShackle = null;
 
@@ -81,6 +82,20 @@
             $('#readyPageSkip,#closeBtn').click(function(){
                 $('.readyPage').fadeOut();
             });
+            $('input[type="date"]').change(function(event) {
+                $('.dateContainer .year').text($('#date').val().slice(0,4))
+                $('.dateContainer .month').text($('#date').val().slice(5,7))
+                $('.dateContainer .day').text($('#date').val().slice(8,10))
+            });
+            $('#formSubmit').click(function(){
+                _this.userInfo.name=$('#sureName').val()+$('#givenName').val();
+                _this.userInfo.sex=$('input[type="radio"]:checked').val();
+                _this.userInfo.email=$('#email').val();
+                _this.userInfo.city=$('#city').val();
+                _this.userInfo.birthday=$('#date').val();
+                _this.userInfo.newsletter=$('input[type="checkbox"]:checked').val();
+                console.log(_this.userInfo);
+            })
         },
 
         initCanvas: function(){

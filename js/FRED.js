@@ -1,3 +1,4 @@
+var userInfo={};
 $(function(){
     var height = window.innerHeight,
         width = window.innerWidth,
@@ -189,5 +190,18 @@ $(function(){
     $('#readyPageSkip,#closeBtn').click(function(){
         $('.readyPage').fadeOut();
     })
-    $('.manOrWoman input')
+    $('input[type="date"]').change(function(event) {
+        $('.dateContainer .year').text($('#date').val().slice(0,4))
+        $('.dateContainer .month').text($('#date').val().slice(5,7))
+        $('.dateContainer .day').text($('#date').val().slice(8,10))
+    });
+    
+    $('#formSubmit').click(function(){
+        userInfo.name=$('#sureName').val()+$('#givenName').val();
+        userInfo.sex=$('input[type="radio"]:checked').val();
+        userInfo.email=$('#email').val();
+        userInfo.city=$('#city').val();
+        userInfo.birthday=$('#date').val();
+        userInfo.newsletter=$('input[type="checkbox"]:checked').val();
+    })
 });

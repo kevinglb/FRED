@@ -166,9 +166,9 @@
       <p class="wrapWord">请填写您的联系方式，<br>以便日后获奖我们可以跟您联系。</p>
       <form id="">
         <p class="familyName">姓</p>
-        <input type="text" id="sureName" data-name="姓"/>
+        <input type="text" id="sureName" data-name="姓" maxlength="2"/>
         <p class="name">名</p>
-        <input type="text" id="givenName" data-name="名"/>
+        <input type="text" id="givenName" data-name="名" maxlength="2"/>
 <!--         <p>微信账号</p>
         <input type="text" id="weChatId" data-name="微信账号"/> -->
         <p class="im">我是</p>
@@ -183,11 +183,16 @@
           <label for="checkboxInputWoman"></label>
         </div>
         <p class="Email">电子邮箱</p>
-        <input type="text" id="email" data-name="email"/>
+        <input type="text" id="email" data-name="email" maxlength="20"/>
         <p class="city">城市</p>
-        <input  type="text" id="city" data-name="城市"/>
+        <input  type="text" id="city" data-name="城市" maxlength="10"/>
         <p class="birthday">出生年月日</p>
-        <input type="date" id="date" value="2016-01-01"data-name="date" >
+        <div class="dateContainer">
+          <input type="date" id="date" value="2016-01-01"data-name="date" >
+          <p class="year">2016</p>
+          <p class="month">01</p>
+          <p class="day">01</p>
+        </div>
         <p class="hope">我希望收到Fred的newsletter</p>
         <div class="checkboxContainer newsletter">
           <input type="checkbox" name="checkMessage" value="message" id="newsletter" data-name="message">
@@ -216,13 +221,9 @@
 
     <!-- Swiper JS -->
     <script src="js/swiper.js"></script>
-<<<<<<< HEAD
     <!--<script type="text/javascript" src="js/FRED.js"></script>-->
     <script type="text/javascript" src="js/FRED-wrapped.js"></script>
-=======
- <!-- <script type="text/javascript" src="js/FRED.js"></script> -->
-     <script type="text/javascript" src="js/FRED-wrapped.js"></script>
->>>>>>> 89b166a41590ad008174248afb755eae35b1df07
+
 </body>
 </html>
 
