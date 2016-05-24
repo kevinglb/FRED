@@ -91,7 +91,7 @@ body{position: relative;}
     display: block;
 }
 .fredRules{
-    width: 0.97rem;
+    width: 1.15rem;
     margin: 0 auto;
     margin-top: 0.9rem;
     font-size: 0.24rem;
@@ -386,6 +386,7 @@ body{position: relative;}
     background-color: transparent;
     box-shadow: none!important;
     -webkit-appearance: none;
+    border-radius:0px!important;
 }
 .familyName{
     position: absolute;
@@ -530,6 +531,7 @@ body{position: relative;}
     left: 50%;
     margin-left: -1.25rem;
     top: 66%;
+    opacity: .5;
 }
 .hope{
     position: absolute;
