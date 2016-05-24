@@ -218,14 +218,14 @@
             $(".shareWrap").css({"background-image": bg});
             $(".shareWrap .combo").attr("src",bracelet);
         },
-        initForm(){
+        initForm:function(){
             var _this = this;
             $("#formSubmit").bind('click',function(){
                 $(".shareWrap").addClass("active");
             });
         },
 
-        completeForm(){
+        completeForm:function(){
             var _this = this;
         },
 
