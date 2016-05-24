@@ -91,7 +91,7 @@ body{position: relative;}
     display: block;
 }
 .fredRules{
-    width: 1.15rem;
+    width: 0.97rem;
     margin: 0 auto;
     margin-top: 0.9rem;
     font-size: 0.24rem;
@@ -349,103 +349,76 @@ body{position: relative;}
     text-align: center;
 }
 .formWrap>h1{
-    position: absolute;
-    width:100%;
-    top: 7%;
-    font-size: 0.48rem;
+    padding-top: .7rem;
 }
 .formWrap>.icon-wave{
-    position: absolute;
+    display: block;
     width: .9rem;
-    left: 50%;
-    margin-left: -.45rem;
-    top: 12.5%;
     height: 0.2rem;
+    margin: 0 auto;
+    margin-top: .05rem;
     background: url('../img/images/icon-wave.png') no-repeat;
-    background-size: 100%
+    background-size: 100%;
 }
 .wrapWord{
+    margin-top:0.2rem;
     line-height: 0.35rem;
+    margin-bottom: 0.5rem;
     font-size: 0.24rem;
-    position: absolute;
-    width: 3.6rem;
-    left: 50%;
-    margin-left: -1.8rem;
-    top: 17%;
 }
 .formWrap form{
-    position: absolute;
-    width: 4rem;
-    height: 8.8rem;
-    left: 50%;
-    margin-left: -2rem;
-    top: 26%;
+    max-width: 4.2rem;
+    margin: 0.3rem auto 0 auto;
     font-size: 0.24rem;
 }
 .formWrap input{
     background-color: transparent;
     box-shadow: none!important;
     -webkit-appearance: none;
-    border-radius:0px!important;
-}
-.familyName{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 1%;
-}
-#sureName{
-    position: absolute;
-    left: 0;
-    top: 5%;
-}
-.name{
-    position: absolute;
-    width: 100%;
-    top: 13%;
-}
-#givenName{
-    position: absolute;
-    left: 0;
-    top: 17%;
-}
-.im{
-    position: absolute;
-    width: 100%;
-    top: 25%;
-}
-.man{
-    position: absolute;
-    top: 31%;
-    left: 8%;
-}
-.checkMan{
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
-.woman{
-    position: absolute;
-    top: 31%;
-    left: 59.5%;
-}
-.checkWoman{
-    position: absolute;
-    top: 30%;
-    left: 81.5%;
 }
 .formWrap input[type='text']{
     width: 100%;
-    padding: 0.01rem;
+    padding: 0.03rem;
     text-align: center;
     font-size: 0.3rem;
     border: 1px solid #B5B8BF;
+    margin: 0.1rem auto;
+}
+#sureName,#givenName,#email,#city{
+    margin-bottom: 0.22rem;
+}
+.formWrap .im{
+    margin-bottom: 0.2rem;
+}
+.formWrap .man,.formWrap .woman{
+    float: left;
+    padding-top: 0.12rem;
+}
+.formWrap .man{
+    margin-left: 0.35rem;
+}
+.formWrap .woman{
+    margin-left: 1.3rem;
+}
+#male{
+    margin-left: 0.3rem;
+}
+#female{
+    margin-left: .3rem;
+}
+.Email{
+    margin-top: .8rem;
+}
+.checkboxContainer{
+    position: relative;
+    float: left;
+    margin-left: 0.55rem;
 }
 .checkboxContainer label{
     cursor: pointer;
     position: absolute;
-    width: 0.4rem;
-    height: 0.4rem;
+    width: 0.5rem;
+    height: 0.5rem;
     top: 0;
     left: 0;
     background: #fff;
@@ -456,14 +429,12 @@ body{position: relative;}
     opacity: 0;
     content: '';
     position: absolute;
-    width: .2rem;
-    height: .1rem;
+    width: 9px;
+    height: 5px;
     background: transparent;
-    top: 50%;
-    margin: -.08rem;
-    left: 50%;
-    margin-left: -.1rem;
-    border: 0.06rem solid #333;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
     border-top: none;
     border-right: none;
     
@@ -478,14 +449,12 @@ body{position: relative;}
     opacity: 0.2;
     content: '';
     position: absolute;
-    width: .2rem;
-    height: .1rem;
+    width: 9px;
+    height: 5px;
     background: transparent;
-    top: 50%;
-    margin: -.08rem;
-    left: 50%;
-    margin-left: -.1rem;
-    border: 0.06rem solid #333;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
     border-top: none;
     border-right: none;
     
@@ -498,59 +467,23 @@ body{position: relative;}
 .checkboxContainer input[type=radio]:checked + label:after,.checkboxContainer input[type=checkbox]:checked + label:after{
     opacity: 1;
 }
-.Email{
-    position: absolute;
-    width: 100%;
-    top: 38%;
-}
-#email{
-    position: absolute;
-    left: 0;
-    top: 42%;
-}
-.city{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-}
-#city{
-    position: absolute;
-    left: 0;
-    top: 54%;
-}
-.birthday{
-    position: absolute;
-    width: 100%;
-    top: 62%;
-}
 #date{
+    margin:0.1rem;
     background-color: #fff;
     width: 2.5rem;
     height: 0.5rem;
-    position: absolute;
-    left: 50%;
-    margin-left: -1.25rem;
-    top: 66%;
-    opacity: .5;
-}
-.hope{
-    position: absolute;
-    width: 100%;
-    top: 75%;
+    margin-bottom: 0.3rem;
 }
 .newsletter{
-    position: absolute;
-    top: 80%;
+    position: relative;
     left: 50%;
-    margin-left: -.25rem;
+    margin-left: -0.25rem;
+    margin-top: 0.22rem;
 }
 #formSubmit{
     display: block;
     width: 2rem;
-    position: absolute;
-    left: 50%;
-    margin-left: -1rem;
-    bottom: 9%;
+    margin: 1.1rem auto;
     border-bottom: 1px solid #B5B8BF;
     font-size: 0.32rem;
 }
