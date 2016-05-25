@@ -161,14 +161,18 @@
   <div class="completeFred">
     <!-- form -->
     <div class="formWrap">
+      <div class="prompt">
+        <p class="promptInput"></p>
+        <p class="promptSelect"></p>
+      </div>
       <h1>表格</h1>
       <span class="icon-wave"></span>
       <p class="wrapWord">请填写您的联系方式，<br>以便日后获奖我们可以跟您联系。</p>
       <form id="">
         <p class="familyName">姓</p>
-        <input type="text" id="sureName" data-name="姓" maxlength="2"/>
+        <input type="text" id="sureName" data-name="姓" maxlength="10"/>
         <p class="name">名</p>
-        <input type="text" id="givenName" data-name="名" maxlength="2"/>
+        <input type="text" id="givenName" data-name="名" maxlength="10"/>
 <!--         <p>微信账号</p>
         <input type="text" id="weChatId" data-name="微信账号"/> -->
         <p class="im">我是</p>
@@ -183,12 +187,12 @@
           <label for="checkboxInputWoman"></label>
         </div>
         <p class="Email">电子邮箱</p>
-        <input type="text" id="email" data-name="email" maxlength="20"/>
+        <input type="text" id="email" data-name="email" maxlength="20" required="required" />
         <p class="city">城市</p>
         <input  type="text" id="city" data-name="城市" maxlength="10"/>
         <p class="birthday">出生年月日</p>
         <div class="dateContainer">
-          <input type="date" id="date" value="2016-01-01"data-name="date" >
+          <input type="date" id="date" value="" data-name="date" >
           <p class="year">2016</p>
           <p class="month">01</p>
           <p class="day">01</p>
