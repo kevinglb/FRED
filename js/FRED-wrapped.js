@@ -11,7 +11,7 @@
             _this.$midArea = $(".midArea"),
             _this.$botArea = $(".botArea"),
             _this.$midBg = $(".midBg");
-
+            //the array that stores images for canvas as background
             _this.imgArr = [];
             _this.canvas = document.getElementById('canvas');
             _this.context = _this.canvas.getContext('2d');
@@ -23,10 +23,9 @@
             //these will update once slide on cable or shackle
             _this.selectedCable = "gold";
             _this.selectedShackle = "blanc";
-
-            _this.imgArr = [];
             _this.userInfo={};
 
+            //start
             _this.startFRED();
             _this.preloadImg(_this.initCanvas);
             _this.initSwiperSize();
@@ -67,8 +66,8 @@
             var _this = this;
             $('#beginPageStart,#goToPlayStart').click(function(){
                 $('.beginFred').fadeOut(500,function(){
-                    $('.readyPageContent').fadeIn(1000,function(){
-                        $('.readyPageSkip').fadeIn(1000,function(){
+                    $('.readyPageContent').fadeIn(750,function(){
+                        $('.readyPageSkip').fadeIn(750,function(){
                             $('.swiper-pagination').fadeIn(200)
                         });
                     });
@@ -89,26 +88,12 @@
             });
 
             var readyPageSwiper = new Swiper('.readyPage-container',{pagination : '.swiper-pagination',shortSwipes : true, resistance : false,resistanceRatio:0.9});
-
-            $('input[type="date"]').change(function(event) {
-                $('.dateContainer .year').text($('#date').val().slice(0,4))
-                $('.dateContainer .month').text($('#date').val().slice(5,7))
-                $('.dateContainer .day').text($('#date').val().slice(8,10))
-            });
-            $('#formSubmit').click(function(){
-                _this.userInfo.name=$('#sureName').val()+$('#givenName').val();
-                _this.userInfo.sex=$('input[type="radio"]:checked').val();
-                _this.userInfo.email=$('#email').val();
-                _this.userInfo.city=$('#city').val();
-                _this.userInfo.birthday=$('#date').val();
-                _this.userInfo.newsletter=$('input[type="checkbox"]:checked').val();
-                console.log(_this.userInfo);
-            })
         },
 
         initCanvas: function(){
             //initCanvas used as callback function, the "this" refers to window as default
             var _this = this === window ? window.FRED : this;
+            //initial the size of canvas
             _this.canvas.width = _this.innerWidth;
             _this.canvas.height = _this.innerHeight;
             _this.drawCanvas();
@@ -220,9 +205,25 @@
         },
         initForm:function(){
             var _this = this;
-            $("#formSubmit").bind('click',function(){
-                $(".shareWrap").addClass("active");
+            
+            $('input[type="date"]').change(function(event) {
+                $('.dateContainer .year').text($('#date').val().slice(0,4))
+                $('.dateContainer .month').text($('#date').val().slice(5,7))
+                $('.dateContainer .day').text($('#date').val().slice(8,10))
             });
+
+            $("#formSubmit").bind('click',function(){
+                _this.userInfo.name=$('#sureName').val()+$('#givenName').val();
+                _this.userInfo.sex=$('input[type="radio"]:checked').val();
+                _this.userInfo.email=$('#email').val();
+                _this.userInfo.city=$('#city').val();
+                _this.userInfo.birthday=$('#date').val();
+                _this.userInfo.newsletter=$('input[type="checkbox"]:checked').val();
+                console.log(_this.userInfo);
+            });
+
+            
+            
         },
 
         completeForm:function(){
