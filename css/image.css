@@ -1,0 +1,68 @@
+div[data-cable='gold']{
+    background-image: url('../img/cable/gold.png');
+}
+div[data-cable='silver']{
+    background-image: url('../img/cable/silver.png');
+}
+div[data-shackle='blanc']{
+    background-image: url('../img/shackle/shackle-blanc.png');
+}
+div[data-shackle='rose']{
+    background-image: url('../img/shackle/shackle-rose.png');
+}
+div[data-shackle='or']{
+    background-image: url('../img/shackle/shackle-or.png');
+}
+div[data-shackle='agrent']{
+    background-image: url('../img/shackle/shackle-agrent.png');
+}
+div[data-shackle='jaune']{
+    background-image: url('../img/shackle/shackle-jaune.png');
+}
+div[data-shackle='orrose']{
+    background-image: url('../img/shackle/shackle-orrose.png');
+}
+div[data-shackle='turquoise']{
+    background-image: url('../img/shackle/shackle-turquoise.png');
+}
+div[data-shackle='grisvert']{
+    background-image: url('../img/shackle/shackle-grisvert.png');
+}
+div[data-shackle='vert']{
+    background-image: url('../img/shackle/shackle-vert.png');
+}
+/*for canvas background*/
+div[data-bg='blanc']{
+    background-image: url('../img/bg/bg-blanc.jpg');
+}
+div[data-bg='rose']{
+    background-image: url('../img/bg/bg-rose.jpg');
+}
+div[data-bg='or']{
+    background-image: url('../img/bg/bg-or.jpg');
+}
+div[data-bg='agrent']{
+    background-image: url('../img/bg/bg-agrent.jpg');
+}
+div[data-bg='jaune']{
+    background-image: url('../img/bg/bg-jaune.jpg');
+}
+div[data-bg='orrose']{
+    background-image: url('../img/bg/bg-orrose.jpg');
+}
+div[data-bg='turquoise']{
+    background-image: url('../img/bg/bg-turquoise.jpg');
+}
+div[data-bg='grisvert']{
+    background-image: url('../img/bg/bg-grisvert.jpg');
+}
+div[data-bg='vert']{
+    background-image: url('../img/bg/bg-vert.jpg');
+}
+div[data-bg='orgris']{
+    background-image: url('../img/bg/bg-orgris.jpg');
+}
+div[data-bg='bleu']{
+    background-image: url('../img/bg/bg-bleu.jpg');
+}
+
