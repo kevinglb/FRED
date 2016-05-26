@@ -24,6 +24,7 @@
             _this.selectedCable = "gold";
             _this.selectedShackle = "blanc";
             _this.userInfo={};
+            _this.userInfoPass=false;
 
             //start
             _this.startFRED();
@@ -64,7 +65,7 @@
 
         startFRED: function(){
             var _this = this;
-            $('#beginPageStart,#goToPlayStart').click(function(){
+            $('#beginPageStart,#goToPlayStart').bind('click',function(){
                 $('.beginFred').fadeOut(500,function(){
                     $('.readyPageContent').fadeIn(750,function(){
                         $('.readyPageSkip').fadeIn(750,function(){
@@ -73,21 +74,85 @@
                     });
                 });
             });
-            $('#fredRules').click(function(){
+            $('#fredRules').bind('click',function(){
                 $('.beginContainer').fadeOut(500,function(){
                     $('.detailsPageContainer').fadeIn(500);
                 });
             });
-            $('#nextPage').click(function(){
+            $('#nextPage').bind('click',function(){
                 $('.detailsPageContainer').fadeOut(500,function(){
                     $('.goToPlayContainer').fadeIn(500);
                 });
             });
-            $('#readyPageSkip,#closeBtn').click(function(){
+            $('#readyPageSkip,#closeBtn').bind('click',function(){
                 $('.readyPage').fadeOut();
             });
 
             var readyPageSwiper = new Swiper('.readyPage-container',{pagination : '.swiper-pagination',shortSwipes : true, resistance : false,resistanceRatio:0.9});
+
+
+            $('input[type="date"]').change(function(event) {
+                $('.dateContainer .year').text($('#date').val().slice(0,4))
+                $('.dateContainer .month').text($('#date').val().slice(5,7))
+                $('.dateContainer .day').text($('#date').val().slice(8,10))
+            });
+            $('#formSubmit').bind('click',function(){
+                var sureName=$('#sureName').val().trim(),
+                    givenName=$('#givenName').val().trim(),
+                    sex=$('input[type="radio"]:checked').val(),
+                    email=$('#email').val().trim(),
+                    city=$('#city').val().trim(),
+                    birthday=$('#date').val().trim(),
+                    newsletter=$('input[type="checkbox"]:checked').val();
+                if(sureName==''){
+                    $('.prompt .promptInput').text('请输入您的');
+                    $('.prompt .promptSelect').text('尊姓');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请输入您的姓')
+                }else if(givenName==''){
+                    $('.prompt .promptInput').text('请输入您的');
+                    $('.prompt .promptSelect').text('名字');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请输入您的名字')
+                }else if(sex==undefined){
+                    $('.prompt .promptInput').text('请选择您的');
+                    $('.prompt .promptSelect').text('性别');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请选择您的性别')
+                }else if(email==''){
+                    $('.prompt .promptInput').text('请输入您的');
+                    $('.prompt .promptSelect').text('电子邮箱');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请输入您的电子邮箱')
+                }else if(city==''){
+                    $('.prompt .promptInput').text('请输入您');
+                    $('.prompt .promptSelect').text('所在的城市');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请输入您所在的城市')
+                }else if(birthday==''){
+                    $('.prompt .promptInput').text('请输入您的');
+                    $('.prompt .promptSelect').text('生日');
+                    $('.prompt').fadeIn(800,function(){
+                        $('.prompt').fadeOut(800)
+                    })
+                    // alert('请输入您的生日')
+                }else{
+                    _this.userInfoPass=true;
+                }
+                    
+                _this.getUserInfo(sureName,givenName,sex,email,city,birthday,newsletter);
+            })
+
         },
 
         initCanvas: function(){
@@ -213,6 +278,7 @@
             });
 
             $("#formSubmit").bind('click',function(){
+
                 _this.userInfo.name=$('#sureName').val()+$('#givenName').val();
                 _this.userInfo.sex=$('input[type="radio"]:checked').val();
                 _this.userInfo.email=$('#email').val();
@@ -220,6 +286,11 @@
                 _this.userInfo.birthday=$('#date').val();
                 _this.userInfo.newsletter=$('input[type="checkbox"]:checked').val();
                 console.log(_this.userInfo);
+
+                if(_this.userInfoPass){
+                    $(".shareWrap").addClass("active");
+                }
+
             });
 
             
@@ -228,6 +299,16 @@
 
         completeForm:function(){
             var _this = this;
+        },
+        getUserInfo:function(sureName,givenName,sex,email,city,birthday,newsletter){
+            var _this = this;
+            _this.userInfo.name=sureName+givenName;
+            _this.userInfo.sex=sex;
+            _this.userInfo.email=email;
+            _this.userInfo.city=city;
+            _this.userInfo.birthday=birthday;
+            _this.userInfo.newsletter=newsletter;
+            console.log(_this.userInfo);
         },
 
 
